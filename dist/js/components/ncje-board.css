@@ -1,0 +1,41 @@
+ncje-board {
+    max-height: 100%;
+    display: grid;   
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    aspect-ratio: 1/1;
+    margin: 10px;
+    border: solid 1px white;
+}
+ncje-board div {
+    border: solid 1px silver;
+    height: 1fr;
+}
+
+ncje-board div:nth-child(1),
+ncje-board div:nth-child(2),
+ncje-board div:nth-child(3) {
+    border-top-color: transparent;
+}
+
+ncje-board div:nth-child(1),
+ncje-board div:nth-child(4),
+ncje-board div:nth-child(7) {
+    border-left-color: transparent;
+}
+
+ncje-board div:nth-child(3),
+ncje-board div:nth-child(6),
+ncje-board div:nth-child(9) {
+    border-right-color: transparent;
+}
+
+ncje-board div:nth-child(7),
+ncje-board div:nth-child(8),
+ncje-board div:nth-child(9) {
+    border-bottom-color: transparent;
+}
+
+ncje-board div:hover {
+    background-color: #EEE;
+}
