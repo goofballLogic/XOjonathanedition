@@ -30,3 +30,7 @@ ncje-object-picker input {
 ncje-object-picker label:has(:checked) {
     background-color: silver;
 }
+label object {
+    width: 95%;
+    height: 95%;
+}
