@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+    <path stroke="peru" fill-opacity="0" d="M 78 22 C 92 20 80 7 95 5" stroke-width="5" />
+    <g stroke="maroon" stroke-width="20">
+        <line x1="10" x2="80" y1="90" y2="20" />
+        <line x1="12" x2="78" y1="88" y2="22" stroke-width="14" stroke="red" />
+    </g>
+    <g stroke="yellow" stroke-width="1" fill="yellow" stroke-opacity="0.8" fill-opacity="0.8">
+        <path transform="rotate(180 93 7)"  stroke="red" fill="red" d="M 90 10 L 100 0 L 95 7 L 100 10 L 93 9 L 90 10 L 92 5 L 85 4 L 93 4 L 93 0 L 95 7 Z" />
+        <path transform="rotate(90 93 5) scale(1.05)" stroke="gold" fill="goldenrod" d="M 90 10 L 100 0 L 95 7 L 100 10 L 93 9 L 90 10 L 92 5 L 85 4 L 93 4 L 93 0 L 95 7 Z" />
+        <path transform="scale(1.2) translate(-20 1)" d="M 90 10 L 100 0 L 95 7 L 100 10 L 93 9 L 90 10 L 92 5 L 85 4 L 93 4 L 93 0 L 95 7 Z" />
+    </g>
+</svg>
+
+<!-- <?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="23.901 35.373 25.812 18.164" width="25.812" height="18.164" xmlns="http://www.w3.org/2000/svg">
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" d="M 23.901 53.537 C 23.901 35.018 34.451 49.696 42.065 45.889 C 44.356 44.743 47.037 41.873 48.757 40.153 C 49.629 39.281 48.024 35.373 49.713 35.373"/>
+</svg> -->
