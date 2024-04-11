@@ -1,11 +1,9 @@
 ncje-board {
-    max-height: 100%;
     display: grid;   
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     aspect-ratio: 1/1;
-    margin: 10px;
-    border: solid 1px white;
+    height: 100%;
 }
 ncje-board div {
     border: solid 1px silver;
