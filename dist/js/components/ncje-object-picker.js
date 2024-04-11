@@ -1,23 +1,23 @@
-const imgUrlBase = new URL(import.meta.url);
-const pathBits = imgUrlBase.pathname.split("/");
-pathBits.pop();
-pathBits.pop();
-pathBits.pop();
-pathBits.push("img");
-imgUrlBase.pathname = pathBits.join("/");
-console.log(imgUrlBase);
+import { bus } from "../bus.js";
+import { imgUrlBase } from "./urls.js";
+
+export const ObjectSelected = Symbol("Object selected");
 
 class ObjectPicker extends HTMLElement {
+
+    #send;
 
     constructor() {
         super();
         this.render();
+        this.#send = bus(this);
+        this.addEventListener("input", e => this.handleClick(e));
     }
 
     renderPickerOption(name) {
         return `
             <label>
-                <object data="${imgUrlBase.href}/${name.toLowerCase()}.svg"></object>
+                <img src="${imgUrlBase.href}/${name.toLowerCase()}.svg"></img>
                 <input type="radio" name="object" value="${name.toLowerCase()}" />
             </label>
         `;
@@ -27,6 +27,11 @@ class ObjectPicker extends HTMLElement {
         this.innerHTML = ["dynamite", "Cross-barrier", "Nought-barrier", "Cross", "Nought"]
             .map(this.renderPickerOption.bind(this))
             .join("");
+    }
+
+    handleClick(e) {
+        const selected = e.target.value;
+        this.#send({ type: ObjectSelected, payload: selected });
     }
 
 }

@@ -8,6 +8,12 @@ ncje-board {
 ncje-board div {
     border: solid 1px silver;
     height: 1fr;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ncje-board div img {
+    width: 90%;
 }
 
 ncje-board div:nth-child(1),
