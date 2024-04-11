@@ -17,7 +17,7 @@ class ObjectPicker extends HTMLElement {
     renderPickerOption(name) {
         return `
             <label>
-                <object data="${imgUrlBase.href}/${name}.svg"></object>
+                <object data="${imgUrlBase.href}/${name.toLowerCase()}.svg"></object>
                 <input type="radio" name="object" value="${name.toLowerCase()}" />
             </label>
         `;
