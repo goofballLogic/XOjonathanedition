@@ -34,7 +34,9 @@ function ensureSending() {
         while(backlog.length) {
 
             const [type, payload, sender, recipients] = backlog.shift();
-            recipients.forEach(([recipient, receive]) => receive({ type, payload }));
+            recipients
+                .filter(([recipient, receive]) => !!receive && sender !== recipient)
+                .forEach(([_, receive]) => receive({ type, payload }));
         
         }
 
