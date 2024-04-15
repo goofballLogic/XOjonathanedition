@@ -1,4 +1,5 @@
 import { bus } from "../bus.js";
+import { BOMB } from "../game.js";
 import { imgUrlBase } from "./urls.js";
 
 export const ObjectSelected = Symbol("Object selected");
@@ -24,7 +25,7 @@ class ObjectPicker extends HTMLElement {
     }
 
     render() {
-        this.innerHTML = ["dynamite", "Cross-barrier", "Nought-barrier", "Cross", "Nought"]
+        this.innerHTML = [BOMB, "Cross-barrier", "Nought-barrier", "Cross", "Nought"]
             .map(this.renderPickerOption.bind(this))
             .join("");
     }

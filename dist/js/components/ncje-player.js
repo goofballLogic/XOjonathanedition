@@ -22,11 +22,11 @@ class Player extends HTMLElement {
 
     receive({ type, payload }) {
 
-        if(type === ObjectPlaced) {
-        
+        if (type === ObjectPlaced) {
+
             this.#player = this.#player === CROSSES ? NOUGHTS : CROSSES;
             this.render();
-        
+
         }
 
     }
