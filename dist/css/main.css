@@ -1,6 +1,7 @@
 @import "../js/components/ncje-object-picker.css";
 @import "../js/components/ncje-board.css";
 @import "../js/components/ncje-player.css";
+@import "../js/components/ncje-winner.css";
 
 * { 
     transition: all 0.4s;

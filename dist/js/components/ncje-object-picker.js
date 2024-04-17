@@ -3,6 +3,8 @@ import { BOMB } from "../game.js";
 import { imgUrlBase } from "./urls.js";
 
 export const ObjectSelected = Symbol("Object selected");
+export const OBJECT_NOUGHT = "nought";
+export const OBJECT_CROSS = "cross";
 
 class ObjectPicker extends HTMLElement {
 
