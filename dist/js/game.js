@@ -3,6 +3,7 @@ import { ObjectPlacementConfirmed, ObjectPlacementRequested } from "./components
 import { OBJECT_CROSS, OBJECT_NOUGHT } from "./components/ncje-object-picker.js";
 import { CROSSES, NOUGHTS } from "./components/ncje-player.js";
 import { PlayerWins } from "./components/ncje-winner.js";
+import { PlayerReady } from "./components/ncje-player.js";
 
 const game = Symbol("game");
 const send = bus(game, receive);
@@ -12,15 +13,20 @@ const state = { pieces: [] };
 
 function receive({ type, payload }) {
 
-    if (type === ObjectPlacementRequested) {
+    if (type === PlayerReady) {
 
+        state.playerReady = payload;
+
+    } else if (type === ObjectPlacementRequested) {
+
+        if(isWin(state)) return;
         const { object, existingObject } = payload;
         const isEmpty = !existingObject;
         const isBarrier = existingObject?.endsWith("-barrier");
         const bombRequested = object === "dynamite";
-        const sameFamilyRequested = existingObject?.startsWith(object)
+        const sameFamilyRequested = existingObject?.startsWith(object);
         if (!(isEmpty || (isBarrier && (bombRequested || sameFamilyRequested)))) return;
-
+        
         if (bombRequested) {
 
             payload = addExplosion(payload);
@@ -32,6 +38,8 @@ function receive({ type, payload }) {
 
         } else {
             
+            const familyBelongsToPlayer = object.startsWith(state.playerReady.toLowerCase().slice(0, 3))
+            if(!familyBelongsToPlayer) return;
             state.pieces[payload.position] = payload.object;
         
         }
